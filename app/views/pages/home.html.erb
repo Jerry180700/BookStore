@@ -1,46 +1,16 @@
-<head>
-<h1>
-BookStore
-</h1>
-</head>
-<body>
+<h1>BookStore</h1>
 <main class="container">
  <div class="row">
-<section class="information-description">
-    <p>
-      ¡<strong>Book</strong> for all ages, a bookstore where all your senses can travel.
-    </p>
-  </section>
- </div>
-
-  <div>
-  <div class="carousel-container">
-  <div class="carousel">
-
-    <div class="carousel-item active">
-      <h2>Drama</h2>
-    </div>
-    <div class="carousel-item">
-      <h2>Terror</h2>
-    </div>
-    <div class="carousel-item">
-      <h2>Suspense</h2>
-    </div>
-    <div class="carousel-item">
-      <h2>Novel</h2>
-    </div>
-    <div class="carousel-item">
-    <h2>Poetry</h2>
-    </div>
-  </div>
-  <button class="carousel-btn prev">❮</button>
-  <button class="carousel-btn next">❯</button>
+<div class="information-description">
+  <p>
+    ¡<strong>Book</strong> for all ages, a bookstore where all your senses can travel.
+  </p>
 </div>
+
   </div>
 
 
 <div class="cards">
-
 <div class="card">
       <img
         alt="Book cover 'Book title'"
@@ -49,15 +19,16 @@ BookStore
         src="https://gandhi.vtexassets.com/arquivos/ids/4427921/image.jpg?v=638550103239170000"
       />
       <div class="card-content">
-        <h2>Book title</h2>
-        <h3>Author</h3>
-        <h4>$ Price</h4>
-        <p>Synopsis</p>
-        <div class="rating">
-          ${renderStars(0)}
-        </div>
-      </div>
-    </div>
+        <h5 class="card-title">Waiting for the Barbarians</h5>
+            <p><strong>Autor:</strong> Lawerence Bechtelar</p>
+            <p><strong>Género:</strong> Drama</p>
+            <p><strong>Precio:</strong> $47.12</p>
+      <div><a href="/books/1" class="btn btn-primary">Details</a></div>
+      <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+
+  </div>
+</div>
+
 
 <div class="card">
       <img
@@ -181,4 +152,3 @@ BookStore
   </div>
 
 </footer>
-</body>
