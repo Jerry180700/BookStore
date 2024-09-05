@@ -1,15 +1,94 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Carousel element */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* Individual carousel item */
+.carousel-item {
+  min-width: 100%;
+  text-align: center;
+  background-color: #f5e36d;
+  padding: 40px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+/* Carousel navigation buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Button hover effect */
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .carousel-item {
+    padding: 20px;
+  }
+
+  .carousel-btn {
+    padding: 8px;
+  }
+}
+
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+.card-image {
+  width: 110px;
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -20,6 +99,46 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+}
+
+.footer {
+  background: #e7e6ec;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 6rem 3.75rem;
+  color: rgba(0,0,0,0.3);
+  justify-content: space-evenly;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+
+.footer-categories {
+  align-items: center;
+
+  ul,li {
+    list-style: none;
+  }
+}
+
+
+.footer-payment-methods {
+  align-items: center;
 }
 
 // Smallest device
