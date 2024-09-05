@@ -4,8 +4,7 @@
       <h1><%= @book.title %></h1>
       <p><strong>Author:</strong> <%= @book.author %></p>
       <p><strong>Genre:</strong> <%= @book.genre %></p>
-      <%# <p><strong>ISBN:</strong> <%= @book.isbn %></p> %>
-      <p><%= @book.synopsis %></p>
+      <p><strong>Synopsis:</strong><p><%= @book.synopsis %></p>
       <p><strong>Price:</strong> $<%= @book.price %></p>
 
       <%= link_to 'Back to list book', books_path, class: 'btn btn-secondary mt-3' %>

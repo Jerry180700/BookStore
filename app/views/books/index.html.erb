@@ -7,13 +7,8 @@
         <div class="card mb-4 shadow-sm">
           <div class="card-body">
             <h5 class="card-title"><%= book.title %></h5>
-            <div class="img item-center">
-              <img
-                alt="Book cover 'Book title'"
-                class="card-image"
-                loading="lazy"
-                src="https://gandhi.vtexassets.com/arquivos/ids/4427921/image.jpg?v=638550103239170000"
-              />
+            <div>
+              <%= image_tag(book.img_url, class:'img-url') %>
             </div>
             <p class="card-text"><%= truncate(book.synopsis, length: 100) %></p>
             <p><strong>Autor:</strong> <%= book.author %></p>
