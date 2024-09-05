@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-8">
+      <h1><%= @book.title %></h1>
+      <p><strong>Autor:</strong> <%= @book.author %></p>
+      <p><strong>Género:</strong> <%= @book.genre %></p>
+      <p><strong>ISBN:</strong> <%= @book.isbn %></p>
+      <p><%= @book.synopsis %></p>
+      <p><strong>Precio:</strong> $<%= @book.price %></p>
+
+      <%= link_to 'Volver a la Lista de Libros', books_path, class: 'btn btn-secondary mt-3' %>
+    </div>
+
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>

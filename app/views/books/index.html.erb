@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="mt-4">Libros Disponibles</h1>
+
+  <div class="row">
+    <% @books.each do |book| %>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><%= book.title %></h5>
+            <p class="card-text"><%= truncate(book.synopsis, length: 100) %></p>
+            <p><strong>Autor:</strong> <%= book.author %></p>
+            <p><strong>Género:</strong> <%= book.genre %></p>
+            <p><strong>Precio:</strong> $<%= book.price %></p>
+            <a href="<%= book_path(book) %>" class="btn btn-primary">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
