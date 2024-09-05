@@ -6,7 +6,7 @@ class Book < ApplicationRecord
 
   validates :title, presence: true
   validates :author, presence: true
-  validates :isbn, numericality: { only_integer: true }
+  # validates :isbn, numericality: { only_integer: true }
   validates :price, numericality: { greater_than_or_equal_to: 0 }
   validates :available_quantity, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 end
