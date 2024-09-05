@@ -1,0 +1,31 @@
+<h1 class="text-center my-4">Listado de Pedidos</h1>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>Usuario</th>
+        <th>Libro</th>
+        <th>Cantidad</th>
+        <th>Estado</th>
+        <th colspan="3" class="text-center">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders&.each do |order| %>
+        <tr>
+          <td><%= order.user.first_name %> <%= order.user.last_name %></td>
+          <td><%= order.book.title %></td>
+          <td><%= order.quantity %></td>
+          <td><%= order.state %></td>
+          <td><%= link_to 'Ver', order, class: "btn btn-info btn-sm" %></td>
+          <td><%= link_to 'Editar', edit_order_path(order), class: "btn btn-warning btn-sm" %></td>
+          <td><%= link_to 'Eliminar', order, method: :delete, data: { confirm: '¿Estás seguro?' }, class: "btn btn-danger btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="text-center my-4">
+  <%= link_to 'Nuevo Pedido', new_order_path, class: "btn btn-success" %>
+  <%= link_to 'Confirmar pedido', confirmar_orders_path(orders: @orders.as_json), class: "btn btn-success" %>
+</div>

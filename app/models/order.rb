@@ -8,7 +8,7 @@ class Order < ApplicationRecord
   validate  :book_must_have_sufficient_stock
 
   def book_must_have_sufficient_stock
-    return if book.nil? || quantity <= book.avaliable_quantity
+    return if book.nil? || quantity <= book.available_quantity
 
     errors.add(:quantity, "Excede el stock")
   end

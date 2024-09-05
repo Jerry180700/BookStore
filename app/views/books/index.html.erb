@@ -7,6 +7,9 @@
         <div class="card mb-4 shadow-sm">
           <div class="card-body">
             <h5 class="card-title"><%= book.title %></h5>
+            <div>
+              <%= image_tag(book.img_url, class:'img-url') %>
+            </div>
             <p class="card-text"><%= truncate(book.synopsis, length: 100) %></p>
             <p><strong>Autor:</strong> <%= book.author %></p>
             <p><strong>Género:</strong> <%= book.genre %></p>
@@ -14,6 +17,17 @@
             <a href="<%= book_path(book) %>" class="btn btn-primary">Ver Detalles</a>
           </div>
         </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="mt-4">Libros Disponibles</h1>
+  <div class="cards">
+    <% @books.each do |book| %>
+      <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= book.image_url.present? ? book.image_url : 'https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg' %>)"> %>
+        <%= link_to book.title, book_path(book), class: "stretched-link text-white" %>
       </div>
     <% end %>
   </div>
