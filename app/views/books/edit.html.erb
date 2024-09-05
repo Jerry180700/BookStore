@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="mt-4">Editar Libro</h1>
+  <p>Modifique los campos necesarios y guarde los cambios para actualizar la información del libro.</p>
+  <div>
+    <%= render 'form', book: @book %>
+  </div>
+  <%= link_to 'Volver a la Lista de Libros', books_path, class: 'btn btn-secondary mt-3' %>
+  <%= link_to 'Mostrar Libro', @book, class: 'btn btn-info mt-3' %>
+</div>

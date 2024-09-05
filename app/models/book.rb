@@ -3,7 +3,6 @@ class Book < ApplicationRecord
   has_many :seller, through: :orders, source: :user
   has_many :buyers, through: :orders, source: :user
   # has_many :users, through: :orders
-  # belongs_to :user
 
   validates :title, presence: true
   validates :author, presence: true
