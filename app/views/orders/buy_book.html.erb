@@ -1,9 +1,11 @@
 <%= form_with model: @order, local: true, class: "row g-3" do |f| %>
   <div class="col-md-6">
+    <%= f.label :price, "Precio", class: "form-label" %>
+    <%= f.text_field :price, value: @price, class: "form-control", readonly: true %>
   </div>
   <div class="col-md-6 d-none">
     <%= f.label :book_id, "Libro", class: "form-label" %>
-    <%= f.text_field :book_id, value: params[:id] %>
+    <%= f.text_field :book_id, value: params[:id], class: "form-control" %>
   </div>
   <div class="col-md-6">
     <%= f.label :quantity, "Cantidad", class: "form-label" %>

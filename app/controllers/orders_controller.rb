@@ -19,24 +19,22 @@ class OrdersController < ApplicationController
       render :new
     end
   end
+  # def edit
+  #   @order = Order.find(params[:id])
+  # end
 
-  def edit
-    @order = Order.find(params[:id])
-  end
-
-  def update
-    @order = Order.find(params[:id])
-    if @order.update(order_params)
-      redirect_to @order, notice: 'La orden fue actualizada exitosamente.'
-    else
-      render :edit
-    end
-  end
-
+  # def update
+  #   @order = Order.find(params[:id])
+  #   if @order.update(order_params)
+  #     redirect_to @order, notice: 'La orden fue actualizada exitosamente.'
+  #   else
+  #     render :edit
+  #   end
+  # end
   def destroy
     @order = Order.find(params[:id])
     @order.destroy
-    redirect_to orders_url, notice: 'La orden fue cancelada'
+    redirect_to orders_path, status: :see_other
   end
 
   private
