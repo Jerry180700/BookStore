@@ -29,39 +29,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
-
-.footer {
-  background: #e7e6ec;
-  display: flex;
-  align-items: center;
-  height: 100px;
-  font-size: unset;
-  padding: 6rem 3.75rem;
-  color: rgba(0,0,0,0.3);
-  justify-content: space-evenly;
-}
-.footer-links {
-  display: flex;
-  align-items: center;
-}
-.footer-links a {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 20px;
-  padding: 0px 10px;
-}
-.footer-links a:hover {
-  opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
-}
-
-.footer-payment-methods {
-  align-items: center;
-}
-
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
