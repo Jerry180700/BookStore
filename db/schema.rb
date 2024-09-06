@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_05_223809) do
     t.bigint "book_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "state", default: "pendiente"
+    t.string "state", default: "In process"
     t.index ["book_id"], name: "index_orders_on_book_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
