@@ -32,7 +32,7 @@ genres.each do |g|
       author: Faker::Book.author,
       genre: g,
       synopsis: Faker::Lorem.paragraph(sentence_count: 5),
-      available_quantity: rand(1..20),
+      available_quantity: rand(10..50),
       price: rand(10.0..50.0).round(2)
     )
   end

@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user = current_user
     if @order.save
-      redirect_to new_order_path, notice: 'La orden fue creada exitosamente.'
+      redirect_to new_order_path
     else
       render :new
     end
