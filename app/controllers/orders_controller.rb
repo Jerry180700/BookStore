@@ -40,6 +40,9 @@ class OrdersController < ApplicationController
       render json: { error: 'No se pudo eliminar el pedido' }, status: :unprocessable_entity
     end
   end
+  def confirmar_orders
+    Order.where(user: current_user).destroy_all
+  end
 
   private
 
