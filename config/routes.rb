@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   # get "home", to:"pages#home"
   resources :orders
+  # Delete
+  delete "orders/:id", to: "orders#destroy"
 end
