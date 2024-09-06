@@ -1,10 +1,25 @@
-<% suma= [] %>
-<% quantity= [] %>
-<% params[:orders].each do |order|%>
-<% book = Book.find(order["book_id"]) %>
-<% quantity << order["quantity"].to_i  %>
-<%suma << book.price*order["quantity"].to_i %>
-<% end %>
-<h1>Total</h1>
-<%= suma.sum %>
-<h2>Su compra de <%= quantity.sum %> libros ha sido procesada</h2>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg rounded-5 bg-blue">
+        <div class="card-body">
+          <% suma= [] %>
+          <% quantity= [] %>
+          <% params[:orders].each do |order|%>
+          <% book = Book.find(order["book_id"]) %>
+          <% quantity << order["quantity"].to_i  %>
+          <%suma << book.price*order["quantity"].to_i %>
+          <% end %>
+          <h1 class="text-center fw-bold fst-italic">Total:</h1>
+          <p class="text-center fs-4 text-decoration-underline ">$<%= suma.sum %></p>
+          <h3 class="text-center">Your purchase of <%= quantity.sum %> <%= quantity.sum > 1 ? 'books' : 'book'%> has been processed!</h3>
+          <div class="text-end">
+            <%= link_to root_path do %>
+            <i class="fa-solid fa-house fa-2x"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
