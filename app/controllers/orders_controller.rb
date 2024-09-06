@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   # Creando mis acciones CRUD
   def buy_book
     @order = Order.new
+    @book = Book.find(params[:id])
   end
 
   def new
@@ -14,27 +15,30 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user = current_user
     if @order.save
-      redirect_to new_order_path, notice: 'La orden fue creada exitosamente.'
+      redirect_to new_order_path
     else
       render :new
     end
   end
-  # def edit
-  #   @order = Order.find(params[:id])
-  # end
+  def edit
+    @order = Order.find(params[:id])
+  end
 
-  # def update
-  #   @order = Order.find(params[:id])
-  #   if @order.update(order_params)
-  #     redirect_to @order, notice: 'La orden fue actualizada exitosamente.'
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    @order = Order.find(params[:id])
+    if @order.update(order_params)
+      redirect_to @order, notice: 'La orden fue actualizada exitosamente.'
+    else
+      render :edit
+    end
+  end
   def destroy
     @order = Order.find(params[:id])
-    @order.destroy
-    redirect_to orders_path, status: :see_other
+    if @order.destroy
+      head :no_content
+    else
+      render json: { error: 'No se pudo eliminar el pedido' }, status: :unprocessable_entity
+    end
   end
 
   private
