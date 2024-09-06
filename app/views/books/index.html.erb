@@ -1,5 +1,6 @@
 <div class="container">
-  <h1 class="mt-4">Libros Disponibles</h1>
+  <h1 class="mt-4">BookStore</h1>
+  <h2>¡<strong>Book</strong> for all ages, a bookstore where all your senses can travel.</h2>
 
   <div class="row">
     <% @books.each do |book| %>
@@ -11,10 +12,11 @@
               <%= image_tag(book.img_url, class:'img-url') %>
             </div>
             <p class="card-text"><%= truncate(book.synopsis, length: 100) %></p>
-            <p><strong>Autor:</strong> <%= book.author %></p>
-            <p><strong>Género:</strong> <%= book.genre %></p>
-            <p><strong>Precio:</strong> $<%= book.price %></p>
-            <a href="<%= book_path(book) %>" class="btn btn-primary">Ver Detalles</a>
+            <p><strong>Author:</strong> <%= book.author %></p>
+            <p><strong>Genro:</strong> <%= book.genre %></p>
+            <p><strong>Price:</strong> $<%= book.price %></p>
+            <a href="<%= book_path(book) %>" class="btn btn-primary">Details</a>
+            <a class="btn btn-success mt-0" href="/books_buy/151/buy">Buy Book</a>
           </div>
         </div>
       </div>
@@ -22,13 +24,24 @@
   </div>
 </div>
 
-<div class="container">
-  <h1 class="mt-4">Libros Disponibles</h1>
-  <div class="cards">
-    <% @books.each do |book| %>
-      <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= book.image_url.present? ? book.image_url : 'https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg' %>)"> %>
-        <%= link_to book.title, book_path(book), class: "stretched-link text-white" %>
-      </div>
-    <% end %>
-  </div>
+<div>
+  <footer class="footer">
+    <h3><i class="fas fa-heart"></i> BookStore</h3>
+
+    <div class="footer-links">
+     <a href="https://www.instagram.com/" target="_blank">
+      <i class="fab fa-instagram"></i>
+     <a href="https://www.facebook.com/" target="_blank">
+      <i class="fab fa-facebook"></i>
+     <a href="https://twitter.com/bpapillard" target="_blank">
+      <i class="fab fa-twitter"></i>
+    </div>
+
+    <div class="footer-payment-methods">
+      <a>Pay methods</a>
+       <img title="" sizes="" srcset="" alt="amex-logo-card" class="vtex-store-components-3-x-imageElement vtex-render-runtime-8-x-lazyload" loading="eager" fetchpriority="auto" crossorigin="anonymous" data-src="https://gandhi.vtexassets.com/arquivos/Amex_gray.png" src="https://gandhi.vtexassets.com/arquivos/Amex_gray.png" style="max-width: 53px;">
+       <img title="" sizes="" srcset="" alt="carnet-logo-card" class="vtex-store-components-3-x-imageElement vtex-render-runtime-8-x-lazyload" loading="eager" fetchpriority="auto" crossorigin="anonymous" data-src="https://gandhi.vtexassets.com/arquivos/Carnet_Gray.png" src="https://gandhi.vtexassets.com/arquivos/Carnet_Gray.png" style="max-width: 53px;">
+      <img title="" sizes="" srcset="" alt="master-logo-card" class="vtex-store-components-3-x-imageElement vtex-render-runtime-8-x-lazyload" loading="eager" fetchpriority="auto" crossorigin="anonymous" data-src="https://gandhi.vtexassets.com/arquivos/Master_Gray.png" src="https://gandhi.vtexassets.com/arquivos/Master_Gray.png" style="max-width: 53px;">
+    </div>
+  </footer>
 </div>
